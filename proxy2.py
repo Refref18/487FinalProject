@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-
+from selenium import webdriver
 app = Flask(__name__)
 
 @app.route('/proxy', methods=['POST'])

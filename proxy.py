@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.options import Options
 
 app = Flask(__name__)
 
-@app.route('/proxy', methods=['POST'])
 def proxy():
     # Receive the encrypted request
     encrypted_request = request.get_data()
@@ -30,7 +29,7 @@ def decrypt_request(encrypted_request):
     pass
 
 
-def perform_website_search(website_url):
+def perform_website_search(website_url):#HTML DÖNSÜN
     # Configure Chrome options
     options = Options()
     options.add_argument("--headless")  # Run Chrome in headless mode
@@ -59,7 +58,8 @@ def encrypt_result(result):
     pass
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    while True:
+        proxy()
 
 
 """
