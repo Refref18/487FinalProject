@@ -8,7 +8,6 @@ from selenium.webdriver.chrome.options import Options
 from tkhtmlview import HTMLLabel
 # create webdriver object
 driver = webdriver.Chrome()
-driver2 = webdriver.Firefox()
 # get geeksforgeeks.org
 driver.get("https://www.geeksforgeeks.org/")
  
@@ -60,7 +59,4 @@ website_content =  driver.page_source
 
 # Open the website content in a GUI window
 open_website_in_gui(website_content)
-
-# Close the TCP connection
-sock.close()
 

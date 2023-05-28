@@ -587,3 +587,4 @@ WebDriver BiDi listening on ws://127.0.0.1:12514
 1684967076457	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\eatron1\\AppData\\Local\\Temp\\rust_mozprofileYjX70H\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://127.0.0.1:12514/devtools/browser/9b08e60a-048e-4941-9cef-be23938a962e
+1685025926726	geckodriver	INFO	Listening on 127.0.0.1:4850
