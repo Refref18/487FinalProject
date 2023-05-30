@@ -588,3 +588,19 @@ WebDriver BiDi listening on ws://127.0.0.1:12514
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\eatron1\\AppData\\Local\\Temp\\rust_mozprofileYjX70H\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://127.0.0.1:12514/devtools/browser/9b08e60a-048e-4941-9cef-be23938a962e
 1685025926726	geckodriver	INFO	Listening on 127.0.0.1:4850
+1685440808513	geckodriver	INFO	Listening on 127.0.0.1:2200
+1685440930406	geckodriver	INFO	Listening on 127.0.0.1:2396
+1685440933459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "2397" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\HP\\AppData\\Local\\Temp\\rust_mozprofilebPyrv7"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1685440933895	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1685440933902	Marionette	INFO	Listening on port 2404
+WebDriver BiDi listening on ws://127.0.0.1:2397
+Read port: 2404
+1685440934176	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+console.error: ({})
+DevTools listening on ws://127.0.0.1:2397/devtools/browser/b19df15a-9b5c-4b5e-be04-d9bf667d48e7

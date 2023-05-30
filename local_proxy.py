@@ -16,6 +16,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 port = int(input("port : "))
 conn_ip = input("connection_ip : ")
 
+# Create webdriver object
+options = Options()
+# Use an existing Chrome instance
+options.add_argument("--remote-debugging-port=9222")
+driver = webdriver.Chrome(options=options)
+prev = driver.current_url
+
 class Local_Proxy():
     def __init__(self):
         self.PORT = port
@@ -26,7 +33,7 @@ class Local_Proxy():
         self.g = self.generate_random_prime()
         self.p = self.generate_random_prime()
         self.is_key_exchange_completed = False
-        self.driver = webdriver.Chrome()
+        #self.driver = webdriver.Chrome()
         
         # Initialize the WebDriver
         # self.options = Options()
@@ -47,7 +54,7 @@ class Local_Proxy():
                 sender.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                 sender.connect((self.conn_ip,self.PORT))
                 # Retrieve the website URL from the active Chrome browser
-                website_url = self.driver.current_url
+                website_url = self.driver.current_url #BU YANLIŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞ
                 # Create the request dictionary
                 request = {
                     "myIP": "...",
@@ -75,15 +82,12 @@ class Local_Proxy():
             print(e)
 
     def open_website_in_chrome(self,website_content):
-        print(website_content)
         # Create a temporary HTML file to store the website content
         with open('temp.html', 'w', encoding='utf-8') as file:
             file.write(website_content)
-        #chrome_path = "C://Program Files(x86)//Google//Chrome//Application//chrome.exe"
-        chrome_path = ChromeDriverManager().install()
-        webbrowser.register(
-            'chrome', None, webbrowser.BackgroundBrowser(chrome_path))
-        webbrowser.open('file://' + os.path.realpath("temp.html"))
+
+        # Open the HTML file in the existing Chrome window
+        driver.get('file://' + os.path.realpath("temp.html"))
         
         """options = Options()
         # Add any necessary options for Chrome
@@ -119,6 +123,14 @@ class Local_Proxy():
                 # ...
 
                 # Open the website in Chrome browser on the local machine
+                
+                
+                
+                if prev == driver.current_url:
+                    continue
+                prev = driver.current_url
+                #website_content = driver.page_source
+                #open_website_in_chrome(website_content)
                 self.open_website_in_chrome(recovered_msg['website'])
 
     # Implement your decryption logic
