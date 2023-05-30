@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import os 
+import os
 # Create webdriver object
 options = Options()
 # Use an existing Chrome instance
@@ -14,7 +14,7 @@ driver = webdriver.Chrome(options=options)
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server (Computer 2)
-server_address = ('SERVER_IP_ADDRESS', SERVER_PORT)
+server_address = ('192.168.215.154', 8080)
 client_socket.connect(server_address)
 
 # Create Flask web application

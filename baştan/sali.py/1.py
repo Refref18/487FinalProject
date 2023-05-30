@@ -41,7 +41,8 @@ def receive_website_content():
 def open_website_in_browser(content):
     with open('temp.html', 'w', encoding='utf-8') as file:
         file.write(content)
-    webbrowser.open('file://' + os.path.realpath("temp.html"))
+    #webbrowser.open('file://' + os.path.realpath("temp.html"))
+    driver.get('file://' + os.path.realpath("temp.html"))
 
 # Function to update the website content in the browser
 
@@ -55,7 +56,7 @@ def update_website_content(url):
 # Example usage
 prev_url = ""
 while True:
-    current_url = input("Enter the URL: ")
+    current_url = input("Enter the URL: ") #bu kısım URL 'i burdan yerine direk aratmadan alsa 
     if current_url != prev_url:
         update_website_content(current_url)
         prev_url = current_url
